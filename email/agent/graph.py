@@ -75,7 +75,7 @@ def query_ticket(ticket: str) -> str:
 
 @tool("send_ticket_to_department", args_schema=SendTicketToDepartmentInput)
 def send_ticket_to_department(department: Literal["frontend", "backend"], subject: str, body: str) -> str:
-    """Send the ticket and solution to the appropriate department by email. Use 'frontend' for frontend issues (frontend@gmail.com), 'backend' for backend issues (backend@gmail.com). Call this after you have the solution and have deduced the department."""
+    """Send the ticket and solution to the appropriate department by email. Use 'frontend' for frontend issues (frontend-team@example.com), 'backend' for backend issues (backend-team@example.com). Call this after you have the solution and have deduced the department."""
     return _send_ticket_to_department_impl(department, subject, body)
 
 
@@ -136,8 +136,8 @@ SYSTEM_PROMPT = """You are a ticket support agent. You have access to:
 2. **query_ticket(ticket)** – Tool that calls the query API (POST to /query) with two string inputs: ticket (1st) and api (2nd, the stored key). Returns the solution string from past ticket issues and solutions. Use this for every ticket the user submits.
 
 3. **send_ticket_to_department(department, subject, body)** – After you get the solution from the API, deduce whether the issue is **frontend** or **backend** from the solution content, then send an email to the right department:
-   - Frontend issues → department "frontend" (frontend@gmail.com)
-   - Backend issues → department "backend" (backend@gmail.com)
+   - Frontend issues → department "frontend" (frontend-team@example.com)
+   - Backend issues → department "backend" (backend-team@example.com)
 
 Workflow for each ticket:
 1. If no API key has been stored yet, ask the user for it and call set_api_key. Then proceed.

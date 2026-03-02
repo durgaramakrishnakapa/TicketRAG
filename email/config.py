@@ -7,8 +7,8 @@ QUERY_API_PATH = "/query"
 
 # Department recipients: mail is sent TO these addresses FROM your Gmail (OAuth account)
 DEPARTMENT_EMAILS = {
-    "frontend": "n210888@rguktn.ac.in",
-    "backend": "n210972@rguktn.ac.in",
+    "frontend": "frontend-team@example.com",
+    "backend": "backend-team@example.com",
 }
 
 # Optional: SMTP for sending emails (if not set, emails are logged only)
