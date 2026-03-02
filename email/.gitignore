@@ -4,3 +4,5 @@ token.json
 venv/
 __pycache__/
 *.pyc
+client_secret_*.json
+credentials.json
