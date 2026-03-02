@@ -148,4 +148,4 @@ ticket_flow/
 
 ---
 
-**Built with RAG, LangGraph, and Google Gemini**
+
